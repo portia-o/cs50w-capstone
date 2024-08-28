@@ -1,0 +1,15 @@
+.chip {
+    border-left: 12px solid #eee;
+}
+
+.Exercise {
+    border-left-color: rgb(123, 129, 241);
+}
+
+.Gratitude {
+    border-left-color: rgb(222, 217, 57);
+}
+
+.Read {
+    border-left-color: rgb(239, 169, 77);
+}

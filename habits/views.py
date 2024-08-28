@@ -4,11 +4,14 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render
 from django.urls import reverse
 from django.db import IntegrityError
 
-from .models import User
+from .models import User, Habit
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello world")
+    habits = Habit.objects.order_by("-timestamp").all()
+    return render(request, "habits/index.html", {
+        "habits": habits
+    })
 
 
 def login_view(request):

@@ -6,7 +6,7 @@ class User(AbstractUser):
     pass
 
 class Habit(models.Model):
-    class typ(models.TextChoices):
+    class habit_type(models.TextChoices):
         GRATITUDE = "Gratitude"
         MEDITATION = "Meditation"
         EXERCISE = "Exercise"
@@ -16,7 +16,7 @@ class Habit(models.Model):
         OTHER = "Other"
 
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="habits")
-    h_type = models.CharField(max_length=32, choices=typ)
+    h_type = models.CharField(max_length=32, choices=habit_type)
     notes = models.TextField(blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     

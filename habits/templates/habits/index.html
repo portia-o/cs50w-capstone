@@ -1,0 +1,17 @@
+{% extends "habits/layout.html" %}
+
+{% block body %}
+
+    <h2>Habits</h2>
+
+    <table class="table">
+        <thead><th>Date</th><th>Type</th><th>Notes</th></thead>
+        {% for h in habits %}
+        <tr>
+            <td>{{ h.timestamp|date:"M d, Y" }}</td>
+            <td class="chip {{ h.h_type }}">{{ h.h_type }}</td>
+            <td>{{ h.notes }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
